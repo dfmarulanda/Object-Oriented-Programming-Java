@@ -13,6 +13,8 @@ Java es un lenguaje de programación versátil y poderoso, conocido por su filos
 6. [Métodos](#6-métodos)
 7. [Manejo de Excepciones](#7-manejo-de-excepciones)
 8. [Entrada y Salida Básica](#8-entrada-y-salida-básica)
+9. [Programación Orientada a Objetos Básica](#9-programación-orientada-a-objetos-básica)
+10. [Paquetes e Importaciones](#10-paquetes-e-importaciones)
 
 ## 1. Estructura Básica de un Programa
 
@@ -347,6 +349,90 @@ public class InputOutput {
         scanner.close();  // Siempre cierra el Scanner cuando termines
     }
 }
+```
+
+## 9. Programación Orientada a Objetos Básica
+
+Java es un lenguaje orientado a objetos. Aquí hay una introducción básica a las clases y objetos.
+
+```java
+public class Person {
+    // Atributos
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Métodos
+    public void introduce() {
+        System.out.println("Hello, my name is " + name + " and I'm " + age + " years old.");
+    }
+
+    // Getters y setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        }
+    }
+
+    // Método principal para probar la clase
+    public static void main(String[] args) {
+        Person person1 = new Person("Alice", 30);
+        person1.introduce();
+
+        Person person2 = new Person("Bob", 25);
+        person2.introduce();
+    }
+}
+```
+
+## 10. Paquetes e Importaciones
+
+Los paquetes en Java se utilizan para organizar las clases relacionadas. Las importaciones permiten usar clases de otros paquetes.
+
+```java
+// Declaración del paquete
+package com.example.myapp;
+
+// Importaciones
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        // ...
+    }
+}
+```
+
+Para usar una clase de otro paquete, debes importarla o usar su nombre completo:
+
+```java
+// Usando el nombre completo sin importar
+java.util.Date today = new java.util.Date();
+
+// O importar la clase y usarla directamente
+import java.util.Date;
+// ...
+Date today = new Date();
 ```
 
 ## Conclusión
