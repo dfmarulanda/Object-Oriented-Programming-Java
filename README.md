@@ -17,7 +17,6 @@ Bienvenido al repositorio del curso de Programación Orientada a Objetos (POO) e
 
 - `/lectures`: Contiene las presentaciones y notas de clase.
 - `/exercises`: Ejercicios prácticos para cada tema.
-- `/projects`: Contiene el archivo PROYECTOS.md con la lista de proyectos de los estudiantes.
 - `/resources`: Material adicional y lecturas recomendadas.
 
 ## Cómo Usar Este Repositorio
