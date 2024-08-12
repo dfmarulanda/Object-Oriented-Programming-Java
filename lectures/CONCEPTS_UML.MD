@@ -1,9 +1,5 @@
 # Sesión 2: Objetos, Clases y Modelado UML (Detallado)
 
-**Fecha:** 05/08/2024
-
-**Duración:** 3 horas
-
 ## Unidad y Tema
 - 1.3 Objetos y clases
 - 1.6 Identificación y modelado de objetos
@@ -18,7 +14,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
 
 ## Contenido Detallado
 
-### 1. Profundización en Objetos y Clases (45 minutos)
+### 1. Profundización en Objetos y Clases 
 
 #### 1.1 Definición detallada de objeto y clase
 - Objeto: Instancia concreta de una clase con estado y comportamiento.
@@ -40,7 +36,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
 #### 1.4 Ejercicio rápido
 - En grupos pequeños, identificar atributos y métodos para una clase "Smartphone"
 
-### 2. Identificación de Objetos y Clases (45 minutos)
+### 2. Identificación de Objetos y Clases 
 
 #### 2.1 Técnicas para identificar objetos y clases en un problema
 - Análisis de sustantivos (para objetos) y verbos (para métodos) en la descripción del problema
@@ -71,7 +67,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
 - Diagramas de comportamiento: Casos de Uso, Actividad, Secuencia
 - Enfoque en diagramas de clases para esta sesión
 
-### 4. Diagramas de Clases UML (60 minutos)
+### 4. Diagramas de Clases UML 
 
 #### 4.1 Elementos de un diagrama de clases
 - Clases: Representadas por rectángulos divididos en tres secciones
@@ -106,7 +102,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
   - Clases: Producto, Carrito, Usuario, Pedido
   - Mostrar diferentes tipos de relaciones entre estas clases
 
-### 5. Actividad Práctica (45 minutos)
+### 5. Actividad Práctica
 
 #### 5.1 Crear un diagrama de clases UML para un sistema de gestión de un gimnasio
 - Trabajar en grupos de 3-4 estudiantes
