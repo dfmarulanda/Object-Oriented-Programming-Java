@@ -97,7 +97,124 @@ Al finalizar esta sesión, el estudiante será capaz de:
 - Implementación: Flecha punteada con triángulo vacío
   - Ejemplo: Una clase implementa una Interfaz
 
-  ![ejemplo gimnasio](https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/class-diagram-for-ATM-system-UML/Class-Diagram-ATM-system-750x660.png)
+
+
+#### 4.1 Ejemplo Universidad:
+
+![ejemplo](https://www.dpcg-sistemas.com.ar/images/Diagrama_de_clases.png)
+
+##### Explicación Detallada del Diagrama de Clases del Sistema Universitario
+
+Este diagrama de clases UML representa la estructura de un sistema universitario. Vamos a analizar cada clase y sus relaciones en detalle.
+
+##### 1. Clases y sus Características
+
+###### 1.1 Persona
+- **Atributos**:
+  - `Nombre`: Identifica a la persona.
+  - `C.I`: Cédula de Identidad, un identificador único.
+- **Rol**: Clase base que representa a cualquier individuo en el sistema universitario.
+
+###### 1.2 Universidad
+- **Atributos**:
+  - `Nombre`: Denominación de la institución.
+  - `Ciudad`: Ubicación geográfica.
+- **Rol**: Entidad central que agrupa a todas las demás entidades del sistema.
+
+###### 1.3 Trabajador
+- **Hereda de**: Persona
+- **Atributos adicionales**:
+  - `Fecha Inicio`: Fecha de comienzo de la relación laboral.
+- **Rol**: Representa a cualquier empleado de la universidad.
+
+###### 1.4 Estudiante
+- **Hereda de**: Persona
+- **Rol**: Representa a cualquier individuo matriculado para estudiar en la universidad.
+
+###### 1.5 Departamento
+- **Atributos**:
+  - `Nombre`: Denominación del departamento académico.
+- **Rol**: Unidad organizativa dentro de la universidad que agrupa áreas de conocimiento.
+
+###### 1.6 PAS (Personal de Administración y Servicios)
+- **Hereda de**: Trabajador
+- **Atributos adicionales**:
+  - `Puesto`: Posición específica dentro de la administración.
+- **Métodos**:
+  - `administrar()`: Representa las funciones administrativas.
+- **Rol**: Personal encargado de tareas no docentes ni investigadoras.
+
+###### 1.7 PDI (Personal Docente e Investigador)
+- **Hereda de**: Trabajador
+- **Atributos adicionales**:
+  - `Categoria`: Nivel académico o investigador.
+- **Métodos**:
+  - `investigar()`: Representa la actividad investigadora.
+  - `enseñar()`: Representa la actividad docente.
+- **Rol**: Personal dedicado a la docencia y/o investigación.
+
+###### 1.8 Est. Grado
+- **Hereda de**: Estudiante
+- **Atributos adicionales**:
+  - `Titulación`: Carrera específica que cursa.
+- **Métodos**:
+  - `colaborar()`: Posibles actividades de colaboración en la universidad.
+- **Rol**: Estudiante de nivel universitario básico.
+
+###### 1.9 Est. Doctorado
+- **Hereda de**: Estudiante
+- **Atributos adicionales**:
+  - `Programa`: Programa doctoral específico.
+- **Métodos**:
+  - `Realizar Tesis()`: Representa el proceso de investigación doctoral.
+- **Rol**: Estudiante de nivel avanzado, realizando investigación doctoral.
+
+###### 1.10 Doctor
+- **Rol**: Representa a un individuo que ha completado un doctorado.
+
+##### 2. Relaciones entre Clases
+
+###### 2.1 Herencia
+Representada por flechas con triángulo vacío (───▷).
+- Persona ───▷ Trabajador y Estudiante: Indica que Trabajador y Estudiante son tipos específicos de Persona.
+- Trabajador ───▷ PAS y PDI: PAS y PDI son tipos específicos de Trabajador.
+- Estudiante ───▷ Est. Grado y Est. Doctorado: Especifica tipos de Estudiantes.
+
+###### 2.2 Asociación
+Representada por líneas simples (───).
+- Universidad ─── Trabajador (1 a *): Una Universidad tiene muchos Trabajadores.
+- Universidad ─── Estudiante (1 a *): Una Universidad tiene muchos Estudiantes.
+- PDI ─── Departamento: Los PDI están asociados a Departamentos.
+
+###### 2.3 Composición
+Representada por un diamante lleno (♦).
+- Universidad ♦───── Departamento: Los Departamentos son parte integral de la Universidad y no existen independientemente.
+
+###### 2.4 Agregación
+Representada por un diamante vacío (◇).
+- Departamento ◇───── Doctor (0..1): Los Doctores están asociados a Departamentos, pero pueden existir independientemente.
+
+###### 2.5 Dependencia
+Representada por una flecha punteada (- - ->).
+- Est. Doctorado - - -> Doctor: Indica que un Est. Doctorado puede convertirse en Doctor.
+
+##### 3. Análisis de las Relaciones
+
+1. La herencia permite una jerarquía clara de roles universitarios, con Persona como base común.
+2. La asociación entre Universidad y Trabajador/Estudiante muestra la relación fundamental en el sistema universitario.
+3. La composición Universidad-Departamento refleja la estructura organizativa esencial.
+4. La agregación Departamento-Doctor muestra una relación menos rígida, permitiendo flexibilidad.
+5. La dependencia entre Est. Doctorado y Doctor representa una progresión académica potencial.
+
+##### 4. Implicaciones del Diseño
+
+1. **Extensibilidad**: La estructura jerárquica permite añadir fácilmente nuevos tipos de Trabajadores o Estudiantes.
+2. **Organización**: Refleja claramente la estructura administrativa y académica de una universidad.
+3. **Roles y Responsabilidades**: Define claramente los diferentes roles dentro del sistema universitario.
+4. **Relaciones Complejas**: Captura relaciones sofisticadas como la progresión de estudiante a doctor.
+
+Este diagrama proporciona una visión completa y estructurada del sistema universitario, facilitando la comprensión de su organización y las interrelaciones entre sus diferentes componentes.
+
 
 ### 5. Actividad Práctica
 
