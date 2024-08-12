@@ -97,10 +97,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
 - Implementación: Flecha punteada con triángulo vacío
   - Ejemplo: Una clase implementa una Interfaz
 
-#### 4.4 Demostración práctica
-- Crear un diagrama de clases UML para un sistema de comercio electrónico simple
-  - Clases: Producto, Carrito, Usuario, Pedido
-  - Mostrar diferentes tipos de relaciones entre estas clases
+  ![ejemplo gimnasio](image.png)
 
 ### 5. Actividad Práctica
 
@@ -114,16 +111,12 @@ Al finalizar esta sesión, el estudiante será capaz de:
 - Cada grupo presenta brevemente su diagrama
 - Discusión sobre diferentes enfoques y decisiones de diseño
 
-### 6. Cierre y Reflexión (15 minutos)
+### 6. Cierre y Reflexión
 
 - Recapitulación de los conceptos clave aprendidos
 - Discusión sobre cómo estos conceptos se aplican en el desarrollo de software real
 - Introducción a la tarea para la próxima sesión
 
-## Evaluación
-- Participación en discusiones y ejercicios en clase: 30%
-- Calidad y completitud del diagrama UML creado en la actividad práctica: 50%
-- Reflexión escrita breve sobre los desafíos encontrados y las lecciones aprendidas: 20%
 
 ## Recursos Adicionales
 
@@ -140,37 +133,3 @@ Al finalizar esta sesión, el estudiante será capaz de:
 2. [Visual Paradigm Online](https://online.visual-paradigm.com/) - Herramienta UML en línea con funciones avanzadas
 3. [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE con soporte para diagramas UML (versión de pago)
 
-## Preparación para la Próxima Sesión
-1. Leer el capítulo introductorio sobre clases en Java del libro "Thinking in Java" por Bruce Eckel (disponible en línea)
-2. Instalar el JDK (Java Development Kit) y un IDE de su elección (recomendado: IntelliJ IDEA Community Edition o Eclipse)
-3. Pensar en tres objetos del mundo real y cómo podrían ser representados como clases en Java, incluyendo atributos y métodos
-
-## Notas del Instructor
-- Asegúrese de mantener un equilibrio entre la teoría y la práctica. Los estudiantes aprenden mejor cuando pueden aplicar inmediatamente los conceptos.
-- Esté preparado para abordar preguntas sobre casos límite en el diseño orientado a objetos.
-- Tenga ejemplos adicionales preparados para ilustrar conceptos difíciles, especialmente para abstracción y encapsulamiento.
-- Fomente la participación activa haciendo preguntas frecuentes y pidiendo ejemplos a los estudiantes.
-
-## Posibles Desafíos y Soluciones
-1. Dificultad para abstraer conceptos del mundo real:
-   - Solución: Proporcione una serie de pasos estructurados para el proceso de abstracción.
-   - Ejemplo: Para abstraer un "Libro", piense en qué información necesitaría un sistema de biblioteca.
-
-2. Confusión entre asociación, agregación y composición:
-   - Solución: Use analogías del mundo real y ejemplos visuales.
-   - Ejemplo: Una universidad (composición) tiene facultades, una facultad (agregación) tiene profesores.
-
-3. Sobrecarga de información en la notación UML:
-   - Solución: Introduzca los elementos gradualmente, comenzando con lo básico.
-   - Proporcione una "hoja de referencia" UML para que los estudiantes la consulten.
-
-## Estrategias de Enseñanza Adicionales
-1. Uso de analogías: Compare las clases con planos arquitectónicos y los objetos con edificios construidos.
-2. Aprendizaje basado en problemas: Presente un problema del mundo real y guíe a los estudiantes a través del proceso de modelado.
-3. Demostraciones interactivas: Use software de modelado UML en tiempo real para mostrar cómo se construyen los diagramas.
-4. Revisión por pares: Haga que los estudiantes revisen y critiquen constructivamente los diagramas de otros.
-
-## Adaptaciones para Diferentes Estilos de Aprendizaje
-- Visual: Utilice diagramas, gráficos y mapas mentales para ilustrar conceptos.
-- Auditivo: Explique conceptos verbalmente y fomente discusiones en grupo.
-- Kinestésico: Incorpore actividades prácticas, como la creación de diagramas UML en papel o usando software.
