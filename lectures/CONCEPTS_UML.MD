@@ -97,7 +97,7 @@ Al finalizar esta sesión, el estudiante será capaz de:
 - Implementación: Flecha punteada con triángulo vacío
   - Ejemplo: Una clase implementa una Interfaz
 
-  ![ejemplo gimnasio](image.png)
+  ![ejemplo gimnasio](https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/class-diagram-for-ATM-system-UML/Class-Diagram-ATM-system-750x660.png)
 
 ### 5. Actividad Práctica
 
