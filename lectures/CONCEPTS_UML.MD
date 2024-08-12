@@ -126,69 +126,47 @@ Este diagrama de clases UML representa la estructura de un sistema universitario
 - **Atributos adicionales**:
   - `Fecha Inicio`: Fecha de comienzo de la relación laboral.
 - **Rol**: Representa a cualquier empleado de la universidad.
-
-###### 1.4 Estudiante
-- **Hereda de**: Persona
-- **Rol**: Representa a cualquier individuo matriculado para estudiar en la universidad.
-
-###### 1.5 Departamento
-- **Atributos**:
-  - `Nombre`: Denominación del departamento académico.
-- **Rol**: Unidad organizativa dentro de la universidad que agrupa áreas de conocimiento.
+- **Composición**: Se compone de PAS y PDI.
 
 ###### 1.6 PAS (Personal de Administración y Servicios)
-- **Hereda de**: Trabajador
-- **Atributos adicionales**:
+- **Parte de**: Trabajador (Composición)
+- **Atributos**:
   - `Puesto`: Posición específica dentro de la administración.
 - **Métodos**:
   - `administrar()`: Representa las funciones administrativas.
 - **Rol**: Personal encargado de tareas no docentes ni investigadoras.
 
 ###### 1.7 PDI (Personal Docente e Investigador)
-- **Hereda de**: Trabajador
-- **Atributos adicionales**:
+- **Parte de**: Trabajador (Composición)
+- **Atributos**:
   - `Categoria`: Nivel académico o investigador.
 - **Métodos**:
   - `investigar()`: Representa la actividad investigadora.
   - `enseñar()`: Representa la actividad docente.
 - **Rol**: Personal dedicado a la docencia y/o investigación.
 
-###### 1.8 Est. Grado
-- **Hereda de**: Estudiante
-- **Atributos adicionales**:
-  - `Titulación`: Carrera específica que cursa.
-- **Métodos**:
-  - `colaborar()`: Posibles actividades de colaboración en la universidad.
-- **Rol**: Estudiante de nivel universitario básico.
-
-###### 1.9 Est. Doctorado
-- **Hereda de**: Estudiante
-- **Atributos adicionales**:
-  - `Programa`: Programa doctoral específico.
-- **Métodos**:
-  - `Realizar Tesis()`: Representa el proceso de investigación doctoral.
-- **Rol**: Estudiante de nivel avanzado, realizando investigación doctoral.
-
 ###### 1.10 Doctor
-- **Rol**: Representa a un individuo que ha completado un doctorado.
+- **Hereda de**: Trabajador
+- **Rol**: Representa a un trabajador que ha completado un doctorado, probablemente parte del PDI.
 
 ##### 2. Relaciones entre Clases
 
 ###### 2.1 Herencia
 Representada por flechas con triángulo vacío (───▷).
 - Persona ───▷ Trabajador y Estudiante: Indica que Trabajador y Estudiante son tipos específicos de Persona.
-- Trabajador ───▷ PAS y PDI: PAS y PDI son tipos específicos de Trabajador.
+- Trabajador ───▷ Doctor: Doctor es un tipo específico de Trabajador.
 - Estudiante ───▷ Est. Grado y Est. Doctorado: Especifica tipos de Estudiantes.
 
-###### 2.2 Asociación
+###### 2.2 Composición
+Representada por un diamante lleno (♦).
+- Universidad ♦───── Departamento: Los Departamentos son parte integral de la Universidad y no existen independientemente.
+- Trabajador ♦───── PAS y PDI: PAS y PDI son componentes mutuamente excluyentes de Trabajador.
+
+###### 2.3 Asociación
 Representada por líneas simples (───).
 - Universidad ─── Trabajador (1 a *): Una Universidad tiene muchos Trabajadores.
 - Universidad ─── Estudiante (1 a *): Una Universidad tiene muchos Estudiantes.
 - PDI ─── Departamento: Los PDI están asociados a Departamentos.
-
-###### 2.3 Composición
-Representada por un diamante lleno (♦).
-- Universidad ♦───── Departamento: Los Departamentos son parte integral de la Universidad y no existen independientemente.
 
 ###### 2.4 Agregación
 Representada por un diamante vacío (◇).
@@ -198,23 +176,37 @@ Representada por un diamante vacío (◇).
 Representada por una flecha punteada (- - ->).
 - Est. Doctorado - - -> Doctor: Indica que un Est. Doctorado puede convertirse en Doctor.
 
+
 ##### 3. Análisis de las Relaciones
 
-1. La herencia permite una jerarquía clara de roles universitarios, con Persona como base común.
-2. La asociación entre Universidad y Trabajador/Estudiante muestra la relación fundamental en el sistema universitario.
-3. La composición Universidad-Departamento refleja la estructura organizativa esencial.
-4. La agregación Departamento-Doctor muestra una relación menos rígida, permitiendo flexibilidad.
-5. La dependencia entre Est. Doctorado y Doctor representa una progresión académica potencial.
+1. La herencia sigue permitiendo una jerarquía clara de roles universitarios, con Persona como base común.
+2. La composición Trabajador-PAS/PDI indica que estos son tipos mutuamente excluyentes de Trabajador.
+3. La herencia Doctor-Trabajador sugiere que los Doctores son considerados un tipo específico de Trabajador, probablemente asociado al PDI.
+4. Las demás relaciones se mantienen como se describieron anteriormente.
 
 ##### 4. Implicaciones del Diseño
 
-1. **Extensibilidad**: La estructura jerárquica permite añadir fácilmente nuevos tipos de Trabajadores o Estudiantes.
-2. **Organización**: Refleja claramente la estructura administrativa y académica de una universidad.
-3. **Roles y Responsabilidades**: Define claramente los diferentes roles dentro del sistema universitario.
-4. **Relaciones Complejas**: Captura relaciones sofisticadas como la progresión de estudiante a doctor.
+1. **Estructura del Personal**: La composición de Trabajador en PAS y PDI refleja una clara distinción entre roles administrativos y académicos.
+2. **Rol de Doctor**: Al ser una subclase de Trabajador, se enfatiza el papel de los Doctores como parte del personal universitario, probablemente en roles académicos o de investigación.
+3. **Flexibilidad en Categorización**: La estructura permite que un Doctor sea considerado un tipo específico de Trabajador, facilitando la representación de roles académicos avanzados.
+4. **Integridad Estructural**: La composición asegura que los Departamentos y los tipos de Trabajadores (PAS/PDI) estén fuertemente ligados a sus contenedores (Universidad y Trabajador, respectivamente).
+5. **Gestión de Ciclo de Vida**: La composición implica que la Universidad es responsable de la creación y destrucción de Departamentos, y que un Trabajador no puede existir sin ser PAS o PDI.
 
-Este diagrama proporciona una visión completa y estructurada del sistema universitario, facilitando la comprensión de su organización y las interrelaciones entre sus diferentes componentes.
+##### 5. Implicaciones de la Composición en el Sistema Universitario
 
+1. **Exclusividad Mutua**: La composición entre Trabajador y PAS/PDI implica que un trabajador debe ser o bien PAS o bien PDI, pero no ambos simultáneamente. Esto refleja la realidad organizativa de muchas universidades donde los roles administrativos y académicos están claramente separados.
+
+2. **Dependencia Existencial**: Los Departamentos, al estar en una relación de composición con la Universidad, no pueden existir fuera del contexto de la universidad. Esto modela correctamente la estructura organizativa donde los departamentos son unidades internas de la institución.
+
+3. **Control de Ciclo de Vida**: La Universidad tiene control total sobre la creación, modificación y eliminación de Departamentos. Similarmente, la clase Trabajador controla el ciclo de vida de las instancias de PAS y PDI.
+
+4. **Impacto en la Implementación**: En términos de programación, esto podría traducirse en que la clase Universidad tenga métodos para crear y gestionar Departamentos, y que la clase Trabajador tenga lógica para determinar si una instancia es PAS o PDI.
+
+5. **Restricciones de Diseño**: Esta estructura impone ciertas limitaciones en cómo se pueden modificar o extender estas clases. Por ejemplo, no se podría tener un Departamento independiente o transferir un Departamento directamente de una Universidad a otra sin recrearlo.
+
+6. **Consistencia de Datos**: La composición ayuda a mantener la integridad y consistencia de los datos del sistema. Por ejemplo, asegura que cada trabajador esté correctamente categorizado y que todos los departamentos estén asociados a una universidad.
+
+7. **Modelado de Jerarquías Organizativas**: Este uso de la composición refleja fielmente las estructuras jerárquicas típicas en entornos universitarios, facilitando la representación de cadenas de mando y responsabilidades.
 
 ### 5. Actividad Práctica
 
@@ -223,30 +215,35 @@ Este diagrama proporciona una visión completa y estructurada del sistema univer
 - Identificar al menos 5 clases relevantes
 - Incluir atributos y métodos para cada clase
 - Representar al menos 3 tipos diferentes de relaciones entre clases
+- Utilizar composición donde sea apropiado, considerando las implicaciones discutidas
 
 #### 5.2 Presentación y discusión
 - Cada grupo presenta brevemente su diagrama
 - Discusión sobre diferentes enfoques y decisiones de diseño
+- Análisis crítico del uso de composición y otras relaciones en los diagramas presentados
 
 ### 6. Cierre y Reflexión
 
-- Recapitulación de los conceptos clave aprendidos
+- Recapitulación de los conceptos clave aprendidos, especialmente la importancia y las implicaciones de la composición
 - Discusión sobre cómo estos conceptos se aplican en el desarrollo de software real
+- Reflexión sobre cómo el uso adecuado de relaciones como la composición puede mejorar el diseño de sistemas
 - Introducción a la tarea para la próxima sesión
-
 
 ## Recursos Adicionales
 
 ### Lecturas recomendadas
 1. Capítulo 3: "UML Basics" del libro "UML Distilled" por Martin Fowler
 2. Artículo: "Best Practices for Creating UML Diagrams" en [developer.com](https://www.developer.com/design/best-practices-for-creating-oop-diagrams-using-uml/)
+3. Artículo: "Composition vs Aggregation in UML" en [Visual Paradigm](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
 
 ### Videos tutoriales
 1. [UML Class Diagram Tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic) (10 minutos)
 2. [Object Oriented Design](https://www.coursera.org/learn/object-oriented-design) - Curso en Coursera (recomendado para estudio posterior)
+3. [UML 2.0 Tutorial](https://www.youtube.com/watch?v=OkC7HKtiZC0&list=PLGLfVvz_LVvQ5G-LdJ8RLqe-ndo7QITYc) - Serie de videos que incluye explicaciones detalladas sobre composición y agregación
 
 ### Herramientas de software
 1. [draw.io](https://app.diagrams.net/) - Herramienta gratuita de diagramación en línea
 2. [Visual Paradigm Online](https://online.visual-paradigm.com/) - Herramienta UML en línea con funciones avanzadas
 3. [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE con soporte para diagramas UML (versión de pago)
+4. [StarUML](http://staruml.io/) - Herramienta de modelado UML multiplataforma con una versión gratuita robusta
 
