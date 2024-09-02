@@ -1,4 +1,7 @@
+// La clase Troop tiene una relación de agregación con Commander
+// Un Commander puede liderar múltiples Troops
 public class Troop {
+    // Asociación con la enumeración TroopType
     private TroopType type;
     private int quantity;
     private int attack;
@@ -62,12 +65,24 @@ public class Troop {
         return attack;
     }
 
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
     public int getDefense() {
         return defense;
     }
 
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
     public int getSpeed() {
         return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     @Override

@@ -1,3 +1,5 @@
+// La clase Skill tiene una relación de agregación con Commander
+// Un Commander puede tener múltiples Skills
 public class Skill {
     private String name;
     private String effect;

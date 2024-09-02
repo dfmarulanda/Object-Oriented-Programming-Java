@@ -1,3 +1,5 @@
+// La clase Resources tiene una relación de composición con Governor
+// Cada Governor tiene exactamente una instancia de Resources
 public class Resources {
     private int gold;
     private int wood;
@@ -38,6 +40,7 @@ public class Resources {
     }
 
     // Método para añadir recursos producidos
+    // Este método utiliza la clase ResourceProduction, que está asociada con ResourceBuilding
     public void add(ResourceProduction production) {
         this.gold += production.getGold();
         this.wood += production.getWood();

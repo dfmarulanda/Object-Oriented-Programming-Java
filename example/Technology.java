@@ -1,8 +1,12 @@
 import java.util.List;
 
+// La clase Technology tiene una relación de agregación con TechnologyTree
+// Un TechnologyTree contiene múltiples Technology
 public class Technology {
     private String name;
+    // Relación reflexiva: una tecnología puede tener prerrequisitos que son otras tecnologías
     private List<Technology> prerequisites;
+    // Asociación con la clase Effect
     private Effect effect;
     private boolean researched;
 
@@ -13,6 +17,8 @@ public class Technology {
         this.researched = false;
     }
 
+    // Este método aplica el efecto de la tecnología al Governor
+    // Representa una relación indirecta entre Technology y Governor
     public void applyEffect(Governor governor) {
         effect.apply(governor);
     }

@@ -1,7 +1,10 @@
+// La clase BattleRound tiene una relación de composición con Battle
+// Una Battle se compone de múltiples BattleRounds
 public class BattleRound {
     private int roundNumber;
     private int attackerDamage;
     private int defenderDamage;
+    // Asociación con Commander para el atacante y el defensor
     private Commander attacker;
     private Commander defender;
 
@@ -25,17 +28,45 @@ public class BattleRound {
         return totalDamage;
     }
 
-    // Getters
+    // Getters y setters
     public int getRoundNumber() {
         return roundNumber;
+    }
+
+    public void setRoundNumber(int roundNumber) {
+        this.roundNumber = roundNumber;
     }
 
     public int getAttackerDamage() {
         return attackerDamage;
     }
 
+    public void setAttackerDamage(int attackerDamage) {
+        this.attackerDamage = attackerDamage;
+    }
+
     public int getDefenderDamage() {
         return defenderDamage;
+    }
+
+    public void setDefenderDamage(int defenderDamage) {
+        this.defenderDamage = defenderDamage;
+    }
+
+    public Commander getAttacker() {
+        return attacker;
+    }
+
+    public void setAttacker(Commander attacker) {
+        this.attacker = attacker;
+    }
+
+    public Commander getDefender() {
+        return defender;
+    }
+
+    public void setDefender(Commander defender) {
+        this.defender = defender;
     }
 
     @Override
