@@ -32,28 +32,7 @@ Bienvenido al repositorio del curso de Programación Orientada a Objetos (POO) e
 - Java Development Kit (JDK) instalado en tu computadora
 - Un IDE de tu elección (recomendamos IntelliJ IDEA o VSCode)
 - Cuenta de GitHub
-
-## Entrega de Proyectos
-
-Para entregar tu proyecto final, sigue estos pasos:
-
-1. Crea un nuevo repositorio en tu cuenta de GitHub para tu proyecto.
-2. Desarrolla tu proyecto en ese repositorio.
-3. Cuando esté listo para entregarlo, haz un fork de este repositorio del curso.
-4. En tu fork, edita el archivo `projects.md`.
    
-6. Añade la información de tu proyecto al final del archivo, siguiendo este formato:
-   ```markdown
-   ## [Nombre del Proyecto]
-   
-   **Estudiantes:** [Nombre(s) del/los estudiante(s)]
-   
-   **Descripción:** Breve descripción del proyecto (2-3 oraciones)
-   
-   **URL del Proyecto:** [URL al repositorio de GitHub del proyecto]
-   ```
-7. Crea un Pull Request con tu actualización al archivo projects.md.
-
 ## Evaluación
 
 Los proyectos serán evaluados basándose en:
