@@ -5,14 +5,18 @@ public class Puppy extends Dog {
         super(name, age, hungerLevel, happinessLevel, energyLevel, isSick, loyaltyLevel);
     }
 
+    public Puppy(String name){
+        super(name);
+    }
+
     @Override
     public void makeSound() {
         System.out.println("Woof de puppy");
     }
 
     @Override
-    public void specialAction() {
-        System.out.println("The puppy is playing with a ball of yarn.");
+    public String specialAction() {
+        return "The puppy is playing with a ball of yarn.";
     }
 }
     

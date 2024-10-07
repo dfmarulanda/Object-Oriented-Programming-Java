@@ -8,6 +8,11 @@ public class Cat extends Pet {
         this.independenceLevel = independenceLevel;
     }
 
+    public Cat(String name) {
+        super(name);
+        this.independenceLevel = 50;
+    }
+
     public int getIndependenceLevel() {
         return independenceLevel;
     }
@@ -18,8 +23,8 @@ public class Cat extends Pet {
     }
 
     @Override
-    public void specialAction() {
-        System.out.println("The cat is playing with a ball of yarn.");
+    public String specialAction() {
+        return "The cat is playing with a ball of yarn.";
     } 
   
 }

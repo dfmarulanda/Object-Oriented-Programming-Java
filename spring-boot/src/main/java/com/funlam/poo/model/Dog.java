@@ -9,8 +9,8 @@ public class Dog extends Pet {
         this.loyaltyLevel = loyaltyLevel;
     }
 
-    public Dog(int age) {
-        super("defecto", age, 50, 50, 50, false);
+    public Dog(String name) {
+        super(name);
         this.loyaltyLevel = 50;
     }
     
@@ -34,8 +34,8 @@ public class Dog extends Pet {
     }
 
     @Override
-    public void specialAction() {
-        System.out.println("The dog is playing fetch.");
+    public String specialAction() {
+        return "The dog is playing fetch.";
     }
     
     

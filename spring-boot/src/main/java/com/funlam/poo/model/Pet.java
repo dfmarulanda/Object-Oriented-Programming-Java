@@ -9,6 +9,15 @@ public abstract class Pet {
     private int energyLevel;
     private boolean isSick;
 
+    public Pet(String name){
+        this.name = name;
+        this.age = 0;
+        this.hungerLevel = 50;
+        this.happinessLevel = 50;
+        this.energyLevel = 50;
+        this.isSick = false;
+    }
+
     public Pet(String name, int age, int hungerLevel, int happinessLevel, int energyLevel, boolean isSick) {
         this.name = name;
         this.age = age;
@@ -130,6 +139,6 @@ public abstract class Pet {
     }
 
     public abstract void makeSound();
-    public abstract void specialAction();
+    public abstract String specialAction();
 
 }
